@@ -1,10 +1,10 @@
 import { Button } from './components/ui/button';
-import A from '@/A';
+import A from '@/pages/A';
+import { Login } from './pages/login';
 function App() {
   return (
     <>
-      <div>222</div>
-      <Button> 123 </Button>
+      <Login></Login>
     </>
   );
 }
