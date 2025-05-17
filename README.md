@@ -10,3 +10,19 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+### 提交规范
+| 类型         | 含义          | 示例                |
+| ---------- | ----------- | ----------------- |
+| `feat`     | 新功能         | 新增注册接口            |
+| `fix`      | 修复 bug      | 修复密码验证逻辑          |
+| `docs`     | 仅文档修改       | 修改 README.md      |
+| `style`    | 格式（无功能、无修复） | 调整缩进、空格           |
+| `refactor` | 重构（功能不变）    | 重构用户登录逻辑          |
+| `perf`     | 性能优化        | 提升加载速度            |
+| `test`     | 增加或修改测试     | 添加登录测试用例          |
+| `build`    | 构建相关的修改     | 修改打包配置            |
+| `ci`       | 持续集成相关      | 修改 GitHub Actions |
+| `chore`    | 杂项（构建、辅助工具） | 更新依赖              |
+| `revert`   | 回退提交        | 回退至 123abc 提交     |

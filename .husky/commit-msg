@@ -1,0 +1,4 @@
+if ! npx --no -- commitlint --edit "$1"; then
+  echo "\033[31m❌ 提交失败！请使用规范格式，例如：feat: 添加登录功能\033[0m"
+  exit 1
+fi
