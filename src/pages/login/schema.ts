@@ -1,6 +1,9 @@
 import { z } from 'zod';
 
 export const formSchema = z.object({
-  username: z.string().min(2, '账号至少2位').max(15, '账号至多15位'),
-  password: z.string().min(6, '密码至少6位'),
+  username: z
+    .string()
+    .min(2, 'the account should have at least 2 charaters')
+    .max(15, 'the account should have at most 15 charaters'),
+  password: z.string().min(6, 'the password should have at least 6 charaters'),
 });
