@@ -1,68 +1,22 @@
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form';
-import { z } from 'zod';
-import { formSchema } from './schema';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import LoginForm from './loginForm';
 
-export const Login = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      username: '313',
-      password: '1123213',
-    },
-  });
-
-  const onSubmit = (data: z.infer<typeof formSchema>) => {
-    console.log(data);
-  };
-
+const Login = () => {
   return (
     <>
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
-          <FormField
-            control={form.control}
-            name="username"
-            render={({ field }) => {
-              console.log(form, { ...field });
-              return (
-                <FormItem>
-                  <FormLabel>Username</FormLabel>
-                  <FormControl>
-                    <Input placeholder="shadcn" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              );
-            }}
-          />
-          <FormField
-            control={form.control}
-            name="password"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Password</FormLabel>
-                <FormControl>
-                  <Input type="password" placeholder="shadcn" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <Button type="submit">Submit</Button>
-        </form>
-      </Form>
+      <div className="flex items-center justify-center w-full min-h-screen flex-col bg-gray-50">
+        <div className="space-y-8 w-full max-w-md">
+          <div className="text-center">
+            <h2 className="text-2xl font-semibold tracking-tight mb-2">Sign in to your account</h2>
+            <div className="space-x-2">
+              <span className="text-gray-500">Or</span>
+              <a href="">create a new account</a>
+            </div>
+          </div>
+          <LoginForm />
+        </div>
+      </div>
     </>
   );
 };
+
+export default Login;
