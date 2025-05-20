@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import { lazyLoad } from './lazyLoad';
 
 const lazyLogin = lazy(() => import('@/pages/login'));
-const lazyHome = lazy(() => import('@/pages/home'));
+const lazyLayout = lazy(() => import('@/layouts'));
 export const router = createBrowserRouter([
   {
     path: '/login',
@@ -11,6 +11,6 @@ export const router = createBrowserRouter([
   },
   {
     path: '/',
-    element: lazyLoad(lazyHome),
+    element: lazyLoad(lazyLayout),
   },
 ]);

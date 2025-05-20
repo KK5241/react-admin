@@ -10,7 +10,7 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
-    "types": ["react", "react-dom"],
+    "types": ["react", "react-dom", "node"],
     "paths": {
       "@/*": ["src/*"]
     }
