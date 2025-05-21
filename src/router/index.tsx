@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import { lazyLoad } from './lazyLoad';
+import ProtectedRouter from './protectedRouter';
 
 const lazyLogin = lazy(() => import('@/pages/login'));
 const lazyLayout = lazy(() => import('@/layouts'));
@@ -10,7 +11,12 @@ export const router = createBrowserRouter([
     element: lazyLoad(lazyLogin),
   },
   {
-    path: '/',
-    element: lazyLoad(lazyLayout),
+    element: <ProtectedRouter />,
+    children: [
+      {
+        path: '/',
+        element: lazyLoad(lazyLayout),
+      },
+    ],
   },
 ]);

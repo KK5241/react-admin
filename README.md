@@ -7,26 +7,13 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## 特性
+- 最新技术栈： react@19、 shadcn/ui、 tailwind@4、 msw@2、 typescript
+- 规范性： eslint、prettier、husky
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
-### 项目结构
 
-src/
-├── assets/ # 静态资源
-├── components/ # 通用组件（如 Button, Table, Modal）
-├── layouts/ # 页面布局（如 MainLayout, AuthLayout）
-├── pages/ # 页面模块（如 Dashboard, Users, Login）
-├── router/ # 路由配置 + 守卫
-├── services/ # API 接口封装
-├── stores/ # Zustand 或 Redux 的状态管理
-├── hooks/ # 自定义 Hook（如 useAuth, usePermission）
-├── utils/ # 工具方法（如 formatDate、request 封装）
-├── config/ # 配置文件（如权限配置、菜单配置）
-└── main.tsx # 项目入口
-
-### 提交规范
+## 提交规范
 
 | 类型       | 含义                   | 示例                |
 | ---------- | ---------------------- | ------------------- |
