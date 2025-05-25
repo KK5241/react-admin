@@ -1,4 +1,5 @@
 import { http, HttpResponse } from 'msw';
+import { login } from './modules/login';
 
 export const handlers = [
   // Intercept "GET https://example.com/user" requests...
@@ -10,4 +11,5 @@ export const handlers = [
       lastName: 'Maverick',
     });
   }),
+  http.post('api/login', login),
 ];

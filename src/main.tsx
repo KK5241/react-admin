@@ -4,6 +4,7 @@ import './index.css';
 import { router } from './router';
 import App from './App.js';
 import { RouterProvider } from 'react-router-dom';
+import './i18n';
 
 async function enableMocking() {
   if (process.env.NODE_ENV !== 'development') {

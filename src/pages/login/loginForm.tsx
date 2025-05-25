@@ -21,20 +21,36 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
+import { login } from '@/services/modules/login';
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const LoginForm = () => {
+  const navigate = useNavigate();
+  const { t } = useTranslation();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
   });
 
-  const onSubmit = (data: z.infer<typeof formSchema>) => {
-    console.log(data);
+  const onSubmit = async (data: z.infer<typeof formSchema>) => {
+    try {
+      const res = await login(data);
+      const { accessToken } = res;
+      console.log('access', res);
+      if (accessToken) {
+        localStorage.setItem('accessToken', accessToken);
+        navigate('/');
+      }
+    } catch (e: any) {
+      console.error('登录失败', e.message);
+    }
   };
 
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-3xl">Login</CardTitle>
+        <CardTitle className="text-3xl">{t('login')}</CardTitle>
         <CardDescription>Enter your credentials to access your account</CardDescription>
       </CardHeader>
       <CardContent>
