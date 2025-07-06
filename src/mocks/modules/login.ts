@@ -15,6 +15,7 @@ const generateToken = (type: 'access' | 'refresh') => {
 };
 
 export const login = async ({ request }: { request: any }) => {
+  console.log('login', request);
   const { username, password } = await request.json();
 
   if (username !== user.username || password !== user.password) {

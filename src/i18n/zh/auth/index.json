@@ -1,0 +1,30 @@
+{
+  "auth": {
+    "header": {
+      "register": "创建新账号",
+      "login": "登录您的账号"
+    },
+    "footer": {
+      "register": "已有账号？立即登录",
+      "login": "创建一个新账号"
+    },
+    "title": {
+      "login": "登录",
+      "register": "注册"
+    },
+    "description": {
+      "login": "请输入您的账号信息以访问",
+      "register": "请填写信息以创建您的账号"
+    },
+    "form": {
+      "username": "用户名",
+      "password": "密码",
+      "confirmPassword": "确认密码",
+      "usernamePlaceholder": "请输入账号",
+      "passwordPlaceholder": "请输入密码",
+      "confirmPasswordPlaceholder": "请再次输入密码",
+      "registerSubmit": "注册",
+      "loginSubmit": "登录"
+    }
+  }
+}

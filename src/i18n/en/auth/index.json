@@ -1,0 +1,31 @@
+{
+    "auth": {
+      "header": {
+        "register": "Create a new account",
+        "login": "Sign in to your account"
+      },
+      "footer": {
+        "register": "Already have an account? Sign in",
+        "login": "Create a new account"
+      },
+      "title": {
+        "login": "Login",
+        "register": "Register"
+      },
+      "description": {
+        "login": "Enter your account information to access",
+        "register": "Fill in the information to create your account"
+      },
+      "form": {
+        "username": "Username",
+        "password": "Password",
+        "confirmPassword": "Confirm Password",
+        "usernamePlaceholder": "Please enter your account",
+        "passwordPlaceholder": "Please enter your password",
+        "confirmPasswordPlaceholder": "Please enter your password again",
+        "registerSubmit": "Register",
+        "loginSubmit": "Login"
+      }
+    }
+  }
+  

@@ -27,7 +27,7 @@ import { useTranslation } from 'react-i18next';
 
 const LoginForm = () => {
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t } = useTranslation('auth');
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -50,8 +50,8 @@ const LoginForm = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-3xl">{t('login')}</CardTitle>
-        <CardDescription>Enter your credentials to access your account</CardDescription>
+        <CardTitle className="text-3xl">{t('auth.title.login')}</CardTitle>
+        <CardDescription>{t('auth.description.login')}</CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
@@ -63,9 +63,9 @@ const LoginForm = () => {
                 console.log(form, { ...field });
                 return (
                   <FormItem>
-                    <FormLabel>Username</FormLabel>
+                    <FormLabel>{t('auth.form.username')}</FormLabel>
                     <FormControl>
-                      <Input placeholder="Please enter the account number" {...field} />
+                      <Input placeholder={t('auth.form.usernamePlaceholder')} {...field} />
                     </FormControl>
                     <div className="flex flex-row-reverse"></div>
                     <FormMessage />
@@ -79,13 +79,17 @@ const LoginForm = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="flex justify-between">
-                    Password
+                    {t('auth.form.password')}
                     <a href="#" className="text-xs text-primary hover:text-primary/90 ">
                       Forgot password?
                     </a>
                   </FormLabel>
                   <FormControl>
-                    <Input type="password" placeholder="Please enter the password" {...field} />
+                    <Input
+                      type="password"
+                      placeholder={t('auth.form.passwordPlaceholder')}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -98,7 +102,7 @@ const LoginForm = () => {
               </label>
             </div>
             <Button type="submit" className="w-full">
-              Sign in
+              {t('auth.title.login')}
             </Button>
           </form>
         </Form>

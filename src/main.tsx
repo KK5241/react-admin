@@ -11,6 +11,7 @@ async function enableMocking() {
     return;
   }
 
+  console.log('Enabling MSW (Mock Service Worker) for development...');
   const { worker } = await import('@/mocks/browser');
 
   // `worker.start()` returns a Promise that resolves

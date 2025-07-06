@@ -11,5 +11,5 @@ export const handlers = [
       lastName: 'Maverick',
     });
   }),
-  http.post('api/login', login),
+  http.post('/api/login', login),
 ];
