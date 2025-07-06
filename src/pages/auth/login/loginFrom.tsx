@@ -35,7 +35,7 @@ const LoginForm = () => {
 
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     try {
-      const res = await login(data);
+      const res = await login(data); // await 后面如果是一个promise的话 会自动包装成promise
       const { accessToken } = res;
       console.log('access', res);
       if (accessToken) {
