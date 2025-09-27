@@ -28,7 +28,13 @@ export const login = async ({ request }: { request: any }) => {
   refreshTokenSore.add(refreshToken);
 
   return HttpResponse.json(
-    { accessToken },
+    {
+      code: 200,
+      message: 'success',
+      data: {
+        accessToken,
+      },
+    },
     {
       status: 200,
       headers: {

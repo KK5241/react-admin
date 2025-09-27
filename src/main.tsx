@@ -21,9 +21,5 @@ async function enableMocking() {
 
 // 保证msw加载成功后再挂载页面
 enableMocking().then(() => {
-  createRoot(document.getElementById('root')!).render(
-    <StrictMode>
-      <RouterProvider router={router} />
-    </StrictMode>
-  );
+  createRoot(document.getElementById('root')!).render(<RouterProvider router={router} />);
 });

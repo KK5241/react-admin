@@ -24,6 +24,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { login } from '@/services/modules/login';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -33,10 +34,15 @@ const LoginForm = () => {
     resolver: zodResolver(formSchema),
   });
 
+  useEffect(() => {
+    console.log('effect');
+  }, []);
+
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     try {
-      const res = await login(data); // await 后面如果是一个promise的话 会自动包装成promise
-      const { accessToken } = res;
+      const res = await login(data);
+      console.log('res', res);
+      const { accessToken } = res.data;
       console.log('access', res);
       if (accessToken) {
         localStorage.setItem('accessToken', accessToken);
